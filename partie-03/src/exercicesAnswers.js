@@ -1,5 +1,6 @@
 //Exercice 1 : Donner la taille de la chaîne de caractères.
 let stringLength = function(sentence) {
+
     return sentence.length;
 }
 
@@ -23,7 +24,7 @@ let displayFifthCharacter = function(sentence) {
 
 //Exercice 5 : Afficher les 9 premiers caractère.
 let displayFirstNineCharacters = function(sentence) {
-    return sentence.substr(0, 9);
+    return sentence.substring(0, 9);
 }
 
 //Exercice 6 : Mettre en majuscule la chaîne.
@@ -43,17 +44,23 @@ let removeSpaces = function(sentence) {
 
 //Exercice 9 : Afficher true si le paramètre d'entrée de la fonction est de type *string*.
 let isString = function(sentence) {
-    return true;
+    if (typeof sentence === 'string')
+        return true;
+    else
+        return false;
 }
 
 //Exercice 10 : Afficher l'extension du fichier.
 let displayExtension = function(fileName) {
+    //split pour découper après le '.' et pop pour afficher ce qu'il reste
     return fileName.split('.').pop();
+    // La méthode pop() supprime le dernier élément d'un tableau et retourne cet élément. Cette méthode modifie la longueur du tableau.
 }
 
 //Exercice 11 : Compter le nombre d'espace dans la chaîne.
 let countSpaces = function(sentence) {
-    return sentence.split(" ").length - 1;
+    return sentence.split(' ').length - 1;
+    // On retire 1 car on commence à zero
 }
 
 //Exercice 12 : Inverser une chaîne de caractères.

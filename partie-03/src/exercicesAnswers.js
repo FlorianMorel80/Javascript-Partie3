@@ -65,11 +65,13 @@ let countSpaces = function(sentence) {
 
 //Exercice 12 : Inverser une chaîne de caractères.
 let invertSentence = function(sentence) {
+    // la méthode split va transformer la chaine de caractère en tableau, si on fait ('') il va séparer toutes les chaines de caractère 'b''o''n' etc .. donc ici on fait split() sans rien dedans
     return sentence.split('').reverse().join('');
 }
 
 //Exercice 13 : Chercher si dans la chaîne de caractère se trouve "La Manu".
 let searchInSentence = function(sentence) {
+    // La méthode includes() permet de déterminer si un tableau contient une valeur et renvoie true si c'est le cas, false sinon.
     return sentence.includes("La Manu");
 }
 
@@ -80,6 +82,23 @@ let displayAbsoluteValue = function(number) {
 
 //Exercice 15 : Afficher les valeurs absolues de plusieurs nombres.
 let displayAbsoluteValues = function(numbersArray) {
+    // La méthode forEach() permet d'exécuter une fonction donnée sur chaque élément du tableau.
+
+    // callback:
+    // La fonction à utiliser pour chaque élément du tableau. Elle prend en compte trois arguments :
+    // valeurCourante:
+    // La valeur de l'élément du tableau en cours de traitement.
+
+    // index Facultatif:
+    // L'indice de l'élément du tableau en cours de traitement.
+
+    // array Facultatif:
+    // Le tableau sur lequel la méthode forEach est appliquée.
+
+    // thisArg Facultatif:
+    // Paramètre optionnel. La valeur à utiliser pour this lors de l'exécution de callback.
+
+
     numbersArray.forEach(function(element, index) {
         numbersArray[index] = Math.abs(element);
     });
@@ -94,5 +113,9 @@ let calculateArea = function(radius) {
 
 //Exercice 17 : Calculer l'hypothènuse d\'un triangle rectangle. Arrondir à l'entier inférieur.
 let calculateHypotenuse = function(a, b) {
-    return Math.round(Math.hypot(a, b));
+    return Math.floor(Math.hypot(a, b));
+    // Ou 
+    let reponse = Math.floor(Math.sqrt(aa + bb));
+    return reponse;
+    car sqrt est compatible avec les navigateurs depuis le version 1
 }
